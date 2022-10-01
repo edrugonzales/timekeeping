@@ -40,6 +40,9 @@ import Bugsnag from '@bugsnag/js'
 import QrReader from 'react-qr-reader'
 import QRCode from "qrcode.react"
 import UAParser from 'ua-parser-js'
+import "../assets/css/horizontal.css"
+import GenerateQR from "../assets/svg/QRCODE.svg"
+import Workmate from "../assets/svg/WORKMATE.svg"
 // ----------------------------------------------------------------------
 const moment = require('moment-timezone')
 moment().tz('Asia/Manila').format()
@@ -698,32 +701,27 @@ const DashboardApp = () => {
 {/*            <label>{location.latitude}</label>*/}
             {location.latitude === 0 ? <LocationLoading />  : isLoading ? <Loading /> : <ButtonMemo />}
 
-            <Box marginTop={3}>
-              <Button
-                  fullWidth
-                  size="large"
-                  variant="contained"
-                  style={{width: "300px"}}
-                  onClick={(e) => {
-                    handleOpenWorkmateTimein()
-                  }}
-              >
-                  Workmate - Time in
-              </Button>
-            </Box>
-            <Box marginTop={3}>
-              <Button
-                  fullWidth
-                  size="large"
-                  variant="contained"
-                  style={{width: "300px"}}
-                  onClick={(e) => {
-                    handleGenerateQR()
-                  }}
-              >
-                  Generate QR Code
-              </Button>
-            </Box>
+
+            <div className="horizontallist scrollbar-hidden">
+              <Box marginTop={3}>
+                <img
+                    src={Workmate}
+                    style={{width: "100px", padding: ".2em"}}
+                    onClick={(e) => {
+                      handleOpenWorkmateTimein()
+                    }}
+                />
+              </Box>
+              <Box marginTop={3}>
+                <img
+                    src={GenerateQR}
+                    style={{width: "100px", padding: ".2em"}}
+                    onClick={(e) => {
+                      handleGenerateQR()
+                    }}
+                />
+              </Box>
+            </div>
             <HelpButton />
             <div className="horizontallist scrollbar-hidden">
               {banners.map((banner) => {
@@ -733,6 +731,8 @@ const DashboardApp = () => {
                       style={{
                         width: "200px",
                         height: "200px",
+                        borderRadius: "10px",
+                        padding: ".3em",
                         margin: "10px",
                         objectFit: "cover",
                       }}

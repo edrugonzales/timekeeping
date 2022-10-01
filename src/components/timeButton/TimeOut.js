@@ -11,6 +11,7 @@ import {
     DialogTitle,
     Slide,
 } from '@material-ui/core'
+import Timeout from "../../assets/svg/TIMEOUT.svg"
 // ----------------------------------------------------------------------
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -57,15 +58,11 @@ export default function BreakOut({ request, current_status, width, location }) {
                         ''
                     )}
 
-                    <Button
-                        fullWidth
-                        size="large"
-                        variant="contained"
+                    <img
+                        src={Timeout}
                         onClick={(e) => handleClickOpen(e, 'Time out')}
-                        style={{ backgroundColor: '#e74c3c', color: '#FFF' }}
-                    >
-                        Time out
-                    </Button>
+                        style={{ width: "100px", justifyContent: "center" }}
+                    />
                 </Box>
             </Grid>
             <Dialog

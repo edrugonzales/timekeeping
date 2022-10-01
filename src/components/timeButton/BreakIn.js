@@ -1,6 +1,7 @@
 // material
 import { Grid, Box, Button } from '@material-ui/core'
 import {useEffect, useState} from 'react'
+import BREAKIN from "../../assets/svg/BREAKIN.svg"
 export default function BreakIn({ request, current_status, width, location }) {
     const handleStatusClick = async (e, status) => {
         e.preventDefault()
@@ -30,15 +31,11 @@ export default function BreakIn({ request, current_status, width, location }) {
                         </Box>
                         : ''}
 
-                    <Button
-                        fullWidth
-                        size="large"
-                        variant="outlined"
-                        style={{ borderColor: '#34495e', color: '#34495e' }}
+                    <img
+                        src={BREAKIN}
+                        style={{ width: "100px" }}
                         onClick={(e) => handleStatusClick(e, 'Break in')}
-                    >
-                        Break in
-                    </Button>
+                    />
                 </Box>
             </Grid>
         </>

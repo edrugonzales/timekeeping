@@ -1,6 +1,7 @@
 // material
 import { Grid, Box, Button } from '@material-ui/core'
 import {useEffect, useState} from 'react'
+import BREAKOUT from "../../assets/svg/BREAKOUT.svg"
 // ----------------------------------------------------------------------
 
 export default function BreakOut({ request, current_status, width, location }) {
@@ -33,15 +34,11 @@ export default function BreakOut({ request, current_status, width, location }) {
                     ) : (
                         ''
                     )}
-                    <Button
-                        fullWidth
-                        size="large"
-                        variant="outlined"
-                        style={{ borderColor: '#34495e', color: '#34495e' }}
+                    <img
+                        src={BREAKOUT}
+                        style={{ width: "100px" }}
                         onClick={(e) => handleStatusClick(e, 'Break out')}
-                    >
-                        Break out
-                    </Button>
+                    />
                 </Box>
             </Grid>
         </>

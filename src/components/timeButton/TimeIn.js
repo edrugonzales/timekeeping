@@ -1,6 +1,7 @@
 // material
 import { Grid, Box, Button } from '@material-ui/core'
 import {useEffect, useState} from 'react'
+import Timein from "../../assets/svg/TIMEIN.svg"
 export default function TimeIn({ request, location }) {
     const handleStatusClick = async (e, status) => {
         e.preventDefault()
@@ -27,14 +28,13 @@ export default function TimeIn({ request, location }) {
                         </iframe>
                         <h3 style={{"margin-left": '80px'}}>Current Location</h3>
                     </Box>
-                    <Button
-                        fullWidth
-                        size="large"
-                        variant="contained"
+                    <img
+                        src={Timein}
+                        style={{
+                            width: "100%",
+                        }}
                         onClick={(e) => handleStatusClick(e, 'Time in')}
-                    >
-                        Time in
-                    </Button>
+                    />
                 </Box>
             </Grid>
         </>
